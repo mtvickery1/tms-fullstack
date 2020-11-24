@@ -1,0 +1,66 @@
+/* *{
+  box-sizing: border-box;
+} */
+
+
+#locations {
+  position: relative;
+  /* width: 100vw !important; */
+}
+#locations img {
+  /* position: relative; */
+  width: 100vw !important;
+}
+
+#locations-header, #contact-header {
+  color: #ffe342;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: 400;
+  font-size: 2.5vw;
+}
+
+#contact-form, #emails, .rounded-circle {
+  /* border: 1px solid #2F2F2F; */
+  background-color: rgb(248, 249, 250, .1);
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, .2);
+  /* box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.2); */
+}
+
+#headquarters h4,
+#warehouse h4,
+.email h4
+{
+  font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+.max {
+  height: 100% !important;
+}
+
+
+#contact-form button {
+  background: #42b6ff !important;
+  border-color: #42b6ff !important;
+}
+
+/* #contact-form input, textarea {
+  border-color: #2F2F2F !important;
+} */
+
+#map {
+  height: 52vh;
+  /* width: 100vw !important; */
+  /* padding: 0 0 0 15px; */
+}
+
+
+.card-header {
+  background: #2F2F2F;
+  color: #FFFFFF;
+}
+
+
+/* ========================================================= */
+
+/* ========================================================= */

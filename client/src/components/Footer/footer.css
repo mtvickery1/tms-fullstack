@@ -1,0 +1,86 @@
+/* Footer */
+
+/* @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
+
+* {
+  /* border: #bd4200 1px solid; */
+}
+
+#footer {
+  background-color: #2F2F2F;
+}
+
+#footer, #footer a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+/* Footer Background */
+
+.darker {
+  background-color: #252525;
+}
+
+
+#circle-up-container {
+  /* height: 200px; */
+}
+/* Up Arrow - Show pointer */
+.pointer {
+  cursor: pointer;
+}
+
+/* Email address links */
+
+#footer a:hover {
+  color: #ffe342;
+}
+
+/* Icons */
+
+#footer a i, #footer a span svg {
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+  color: white;
+}
+
+#footer div.social a:hover i, #footer div.social a:hover span svg {
+  font-size: 30px;
+  margin-top: -10px;
+  color: #ffe342;
+}
+
+/* ---------------- Links Column ---------------- */
+
+/* .center {
+  display: table;
+  margin: 0 auto;
+  text-align: left;
+} */
+
+/* Set width to enable mx-auto */
+
+.link {
+  width: 122px;
+}
+
+/* Space for icon arrows */
+
+.space {
+  margin-left: 4px;
+}
+
+/* ---------------- Address Column ---------------- */
+
+/* ---------------- Quote Column ---------------- */
+
+#quote-btn {
+  font-size: 14px;
+  padding: 16px 38px;
+  color: white;
+}
+
+#quote-btn:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
