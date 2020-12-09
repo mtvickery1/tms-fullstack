@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // CSS
 import './App.css';
+import './pages/Home/Home.css';
+import './pages/resources/resources.css';
+import './components/Company/timeline.css'
 
 // Pages
 import Home from './pages/Home/home.js';
@@ -12,7 +15,6 @@ import Home from './pages/Home/home.js';
 // Our Company
 import Profile from "./pages/company/profile.js";
 import Partnership from "./pages/company/partnership.js";
-import Gi from "./pages/company/gi.js";
 
 // Services
 import Services from "./pages/services/services.js";
@@ -40,6 +42,10 @@ import Contactus from "./pages/contactus/contactus.js";
 import Nav from "./components/Nav/navigation.js";
 import Footer from "./components/Footer/footer";
 
+// Suspense
+// const Contactus = React.lazy(() => import('./pages/contactus/contactus.js'));
+
+
 
 // const routes = [
 //   { path: '/', name: 'Home', Component: Home },
@@ -60,101 +66,117 @@ import Footer from "./components/Footer/footer";
 // ]
 
 
-function App({ location }) {
 
-  return (
+class App extends Component {
 
+  // Hide loader after component mounts
+  // componentDidMount() {
+  //   setTimeout(() => 
+  // this.props.hideLoader()
+  // , 500);
+  // }
 
-    <div>
-      <Nav />
+  render() {
 
-      <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          timeout={{ enter: 400, exit: 400 }}
-          classNames={'fade'}
-        >
-
-          <div className='page'>
-            <Switch location={location}>
-              {/* Home */}
-              <Route exact path="/" component={Home}></Route>
-
-              {/* Our Company */}
-              <Route exact path="/profile" component={Profile}></Route>
-              <Route exact path="/partnership" component={Partnership}></Route>
-              <Route exact path="/gi" component={Gi}></Route>
-
-              {/* Services */}
-              <Route exact path="/services" component={Services}></Route>
-              {/* <Route exact path="/destination" component={Destination}></Route> */}
-              <Route exact path="/cfi" component={Cfi}></Route>
-
-              {/* Warehouse */}
-              <Route exact path="/warehouse" component={Ware}></Route>
-
-              {/* Resources */}
-              <Route exact path="/icote" component={Icote}></Route>
-              <Route exact path="/docs" component={Docs}></Route>
-
-              {/* Contact */}
-              <Route exact path="/contactus" component={Contactus}></Route>
+    // Location to assist with page transitions
+    const { match, location, history } = this.props
 
 
-              {/* <Route exact path="/exleader" component={Leader}></Route> */}
-              {/* <Route exact path="/globalser" component={Global}></Route> */}
+    return (
 
 
-              {/* Not linked */}
-              {/* <Route exact path="/gallery" component={Gallery}></Route> */}
+      <div>
+        <Nav />
 
-              {/* Catch All */}
-              <Route component={Home}></Route>
-            </Switch>
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            timeout={{ enter: 400, exit: 400 }}
+            classNames={'fade'}
+          >
 
-            <Footer />
-          </div>
-          
-        </CSSTransition>
-      </TransitionGroup>
+            <div className='page'>
+              <Switch location={location}>
+                {/* Home */}
+                <Route exact path="/" component={Home}></Route>
 
-      {/* <Footer /> */}
-    </div>
+                {/* Our Company */}
+                <Route exact path="/profile" component={Profile}></Route>
+                <Route exact path="/partnership" component={Partnership}></Route>
 
+                {/* Services */}
+                <Route exact path="/services" component={Services}></Route>
+                {/* <Route exact path="/destination" component={Destination}></Route> */}
+                <Route exact path="/cfi" component={Cfi}></Route>
 
-    // <Router>
-    //   <>
-    //     <Nav />
+                {/* Warehouse */}
+                {/* <Route exact path="/warehouse" component={Ware}></Route> */}
 
+                {/* Resources */}
+                <Route exact path="/icote" component={Icote}></Route>
+                <Route exact path="/docs" component={Docs}></Route>
 
-    //       {routes.map(({ path, Component }) => (
-    //         <Route key={path} exact path={path}>
-    //           {({ match }) => (
-    //             <CSSTransition
-    //               in={match != null}
-    //               timeout={{ enter: 300, exit: 300 }}
-    //               classNames="fade"
-    //               unmountOnExit
-    //             >
-    //               <div className="page">
-    //                 <Component />
-    //               </div>
-    //             </CSSTransition>
-    //           )}
-    //         </Route>
-    //       ))}
+                {/* Contact */}
+                <Route exact path="/contactus" component={Contactus}></Route>
+                {/* Suspense makes the catchall not work */}
+                {/* <Suspense fallback={<div className='load'>Loading...</div>}>
+                  <Route exact path="/contactus" component={Contactus}></Route>
+                </Suspense> */}
 
-    //       {/* Catch All */}
-    //       {/* <Route component={Home}></Route> */}
-
-
-    //     <Footer />
-
-    //   </>
-    // </Router>
+                {/* <Route exact path="/exleader" component={Leader}></Route> */}
+                {/* <Route exact path="/globalser" component={Global}></Route> */}
 
 
-  );
+                {/* Not linked */}
+                {/* <Route exact path="/gallery" component={Gallery}></Route> */}
+
+                {/* Catch All */}
+                <Route component={Home}></Route>
+              </Switch>
+
+              <Footer />
+            </div>
+
+          </CSSTransition>
+        </TransitionGroup>
+
+      </div>
+
+
+      // Mapping version of routes found on react-transition-group website
+      // <Router>
+      //   <>
+      //     <Nav />
+
+      //       {routes.map(({ path, Component }) => (
+      //         <Route key={path} exact path={path}>
+      //           {({ match }) => (
+      //             <CSSTransition
+      //               in={match != null}
+      //               timeout={{ enter: 300, exit: 300 }}
+      //               classNames="fade"
+      //               unmountOnExit
+      //             >
+      //               <div className="page">
+      //                 <Component />
+      //               </div>
+      //             </CSSTransition>
+      //           )}
+      //         </Route>
+      //       ))}
+
+      //       {/* Catch All */}
+      //       {/* <Route component={Home}></Route> */}
+
+      //     <Footer />
+
+      //   </>
+      // </Router>
+
+
+
+    );
+  }
 }
 
 export default withRouter(App);

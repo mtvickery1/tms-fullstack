@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { useEffect } from 'react'
 
 
-import '../../css/mainserv.css';
+
+// import '../../css/mainserv.css';
 // import Footer from '../../components/Footer/footer.js/index.js';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
 import pic2 from '../../images/tms6.png';

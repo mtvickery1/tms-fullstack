@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 
 import imag1 from "../../images/trdm4.jpg";
-import '../../css/mainserv.css';
+
 import { Link } from 'react-router-dom';
 import logo4 from '../../images/tms2.png';
 // import Footer from '../../components/Footer/footer.js/index.js';
@@ -54,7 +54,7 @@ function MainServ() {
           <div className="col-md-10 col-xl-8 profile-body">
             Trade Management Solutions (TMS) is a leading international supply chain provider specializing in import/export, customs brokerage, all modes of transportation, warehousing and distribution.
             Founded in 2005, TMS offers an end-to-end solution ensuring a supply chain’s efficiency, security, visibility and compliance. The company provides a full range of services while acting as a single point of contact for its clients.
-              Headquartered in Round Rock, Texas, and with various locations throughout the U.S. and Mexico, TMS has an expansive footprint throughout the Caribbean,  Central America and South America while serving the global needs of its clients.
+            Headquartered in Round Rock, Texas, and with various locations throughout the U.S. and Mexico, TMS has an expansive footprint throughout the Caribbean,  Central America and South America while serving the global needs of its clients.
           </div>
 
           {/* Filler */}
@@ -83,13 +83,13 @@ function MainServ() {
               </div>
               <div className="col-md-8">
                 {/* Name */}
-                <h2 className=''><strong>Hector Quintanar</strong></h2>
+                <h2 className='white-text'><strong>Hector Quintanar</strong></h2>
                 {/* Title */}
                 <h3 className='blue-text'>President</h3>
                 <br />
-                Hector Quintanar has over 25 years of experience in both domestic and international High Tech markets along with diverse experience in quality, manufacturing, supply chain management, and project management.
+                Hector Quintanar has over 30 years of experience in both domestic and international High Tech markets along with diverse experience in quality, manufacturing, supply chain management, and project management.
                 <br /><br />
-                Mr. Quintanar holds a bachelor’s degree in Electrical Engineering from Instituto Politecnico in Mexico City, Mexico. He also trained in Manufacturing Incorporated Strategies from Harvard University in Boston, MA. Mr. Quintanar is also a founding partner of QHE Logistics - a worldwide transportation service, a partner of GES Returns - an asset recovery business, and partner of Trade Management Solutions - LP.
+                Mr. Quintanar holds a bachelor’s degree in Electrical Engineering from Instituto Politecnico in Mexico City, Mexico. He also trained in Manufacturing Incorporated Strategies from Harvard University in Boston, MA. Mr. Quintanar is also a founding partner of QHE Logistics - a worldwide transportation service, a partner of GES Returns - an asset recovery business, and partner of Trade Management Solutions - LP. A 4PL Supply Chain Integrator.
               </div>
             </div>
 
@@ -104,7 +104,10 @@ function MainServ() {
                 Mr. Quintanar also served in several senior management roles for Dell Inc. His responsibilities were in Manufacturing and Supply Chain related positions such as Mexico Re-configuration Plant Manager, Operations Manager, International Logistics Manager, and Project Leader for Latin America facilities start-up. During his 10-years at Dell Inc., Mr. Quintanar played a critical role in the international growth of the company.
                 <br /><br />
 
-                One of his key roles was establishing the Dell Direct Model of products supply from USA factories to the Latin-America market and leading of Dell Brazil Manufacturing Center start-up. During his assignment to the Brazil project, the team established the first RECOF approval (in-plant bonded warehouse with tax deferral capability) for any foreign company with Operations in Brazil.
+                One of his key roles was establishing the Dell Direct Model of products supply from USA factories to the Latin-America market and leading of Dell Brazil Manufacturing Center start-up. During his assignment to the Brazil project, the team established the first RECOF approval (in-plant bonded warehouse with tax deferral capability) for any foreign company with Operations in Brazil. Lately Mr. Quintanar has managed to expand his companies with operations in Mexico City, Ensenada BC, Miami, FL and Austin Texas.
+                <br /><br />
+
+                With more than 200 associates across the different organizations and the recent expansion to 50 K Sq/Ft facility in Miami FL including FTZ , Bonded Warehousing and Second Touch/Value Added Logistics Services Mr. Quintanar’s companies being able to retain business with Fortune 500 corporations for the last 12 years.
                 <br /><br />
 
 
@@ -133,7 +136,7 @@ function MainServ() {
               </div>
               <div className="col-md-8">
                 {/* Name */}
-                <h2><strong>Alejandro Llorente</strong></h2>
+                <h2 className='white-text'><strong>Alejandro Llorente</strong></h2>
                 {/* Title */}
                 <h3 className='blue-text'>Vice President</h3>
                 <br />
@@ -162,7 +165,7 @@ function MainServ() {
               </div>
               <div className="col-md-8">
                 {/* Name */}
-                <h2><strong>Alex Quintanar</strong></h2>
+                <h2 className='white-text'><strong>Alex Quintanar</strong></h2>
                 {/* Title */}
                 <h3 className='blue-text text-center text-md-left '>Chief Operations Officer</h3>
                 <br />

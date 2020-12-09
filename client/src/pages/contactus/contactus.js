@@ -26,8 +26,11 @@ class Contactus extends Component {
 
 
   componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll)
     window.scrollTo(0, 0)
+    window.addEventListener('scroll', this.listenToScroll)
+    // window.scrollTo(0, 0)
+
+    
   }
 
   componentWillUnmount() {
@@ -189,7 +192,7 @@ class Contactus extends Component {
 
       <React.Fragment>
 
-        <div className=''>
+
 
           {/* Team Photo */}
           <div id='locations'>
@@ -199,13 +202,13 @@ class Contactus extends Component {
           </div>
 
           {/* Darken BG */}
-          <div className='darker-bg'>
+          <div className=''>
 
             <div id='contact' className='container'>
 
               {/* Locations Header */}
               <div className="row pt-3">
-                <div id='locations-header' className="col-md-12 text-center">
+                <div className="col-md-12 text-center yellow-text">
                   <h1>Locations</h1>
                 </div>
               </div>
@@ -267,7 +270,7 @@ class Contactus extends Component {
 
               {/* Contact TMS */}
               <div className="row pt-3">
-                <div id='contact-header' className="col-md-12 text-center">
+                <div className="col-md-12 text-center yellow-text">
                   <h1>Contact Us</h1>
                 </div>
               </div>
@@ -356,7 +359,6 @@ class Contactus extends Component {
 
             </div>
 
-          </div>
         </div>
 
 

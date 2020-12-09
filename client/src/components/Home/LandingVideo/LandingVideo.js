@@ -1,52 +1,79 @@
-import React, { Component } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 // CSS
 import './LandingVideo.css'
 // Media
-import tmsvideo from "../../../images/tmsvideo.mov";
-
-
-// NOT IN USE
-// import ReactPlayer from 'react-player';
-
-
-class LandingVideo extends Component {
+import tmsVideo from "../../../images/video/tms-video-720.mp4";
+import poster from "../../../images/poster.jpg";
 
 
 
 
+const isSafari = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  return ua.indexOf("safari") > -1 && ua.indexOf("chrome") < 0;
+};
 
+function LandingVideo() {
+  const videoParentRef = useRef();
+  const [shouldUseImage, setShouldUseImage] = useState(false);
+  useEffect(() => {
+    // check if user agent is safari and we have the ref to the container <div />
+    if (isSafari() && videoParentRef.current) {
+      // obtain reference to the video element
+      const player = videoParentRef.current.children[0];
 
-  render() {
-    return (
+      // if the reference to video player has been obtained
+      if (player) {
+        // set the video attributes using javascript as per the
+        // webkit Policy
+        player.controls = false;
+        player.playsinline = true;
+        player.muted = true;
+        player.setAttribute("muted", ""); // leave no stones unturned :)
+        player.autoplay = true;
 
-      <React.Fragment>
+        // Let's wait for an event loop tick and be async.
+        setTimeout(() => {
+          // player.play() might return a promise but it's not guaranteed crossbrowser.
+          const promise = player.play();
+          // let's play safe to ensure that if we do have a promise
+          if (promise.then) {
+            promise
+              .then(() => {})
+              .catch(() => {
+                // if promise fails, hide the video and fallback to <img> tag
+                videoParentRef.current.style.display = "none";
+                setShouldUseImage(true);
+              });
+          }
+        }, 0);
+      }
+    }
+  }, []);
 
-        {/* <ReactPlayer
-          url={tmsvideo}
-          className='react-player'
-          playing
-          width='100%'
-          height='50'
+  return shouldUseImage ? (
+    <img src={tmsVideo} id="myVideo" class="landing-space" alt="Muted Video" />
+  ) : (
+    <div
+      ref={videoParentRef}
+      dangerouslySetInnerHTML={{
+        __html: `
+        <video
           loop
-          Autoplay
           muted
-        /> */}
-
-
-        <div className='bg-wrapper landing-space'>
-
-          <video autoPlay muted loop id="myVideo">
-            <source src={tmsvideo} type="video/mp4" />
-            Your browser does not support HTML5 video.
-           </video>
-
-          <div id='fade'></div>
-
-        </div>
-
-      </React.Fragment>
-
-    );
-  }
+          autoplay
+          playsinline
+          id="myVideo"
+          class="landing-space "
+          preload="metadata"
+          
+        >
+        <source src="${tmsVideo}" type="video/mp4" />
+        </video>`
+      }}
+    />
+  );
 }
+
+
 export default LandingVideo;

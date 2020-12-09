@@ -1,6 +1,7 @@
 #navbar {
   /* background: rgb(245, 245, 245, .8) !important; */
   background-color: rgb(47, 47, 47) !important;
+  z-index: 990;
 }
 #navbar-container {
   /* background: rgb(245, 245, 245, 0); */

@@ -1,13 +1,15 @@
 #main-container {
+  /* background-color: #2F2F2F; */
   background-color: #2F2F2F;
+
 }
 #spacer{
-  padding: 5px;
+  /* padding: 5px; */
   background-color: #2F2F2F;
 }
 
 .frame, .full-frame {
-  margin: 5px;
+  /* margin: 5px; */
   overflow: hidden;
   transition: 1s;
   filter: grayscale(0%);

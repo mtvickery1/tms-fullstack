@@ -46,3 +46,14 @@
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
+
+/* React lazy page load */
+.load {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: auto;
+  background-color: yellowgreen;
+  z-index: 999;
+}

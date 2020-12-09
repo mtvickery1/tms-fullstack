@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 
 
-import '../../css/mainserv.css';
+
 import { Link } from 'react-router-dom';
 import pic5 from '../../images/tms5.png';
 import pic6 from '../../images/warehouseflow.png';
@@ -23,22 +23,22 @@ function MainServ() {
     <React.Fragment>
 
       {/* ==================== Services Container ==================== */}
-      <div id='services-container' className='container-fluid navspace'>
+      <div id='services-container' className='container-fluid navspace mb-3'>
 
         {/* ========== What we do? ========== */}
         <div className="row">
 
           <div className="col-md-10 col-xl-6 offset-md-1">
-            <p className="font-italic yellow-text"><h2>What we do?</h2></p>
-            <p className="font-italic"><h3><small>Our philosophy is based upon an “Upstream Approach” that eliminates waste in the supply chain such as basic cost, handling, delays, and unnecessary expenses. TMS bases its success upon its proven Three-Point System.
+            <p className=" yellow-text"><h2>What we do?</h2></p>
+            <p className=""><h3><small>Our philosophy is based upon an “Upstream Approach” that eliminates waste in the supply chain such as basic cost, handling, delays, and unnecessary expenses. TMS bases its success upon its proven Three-Point System.
             </small></h3></p>
             <br></br>
 
-            <p className="font-italic"><h3><small>1. Offer a more cost-efficient service by utilizing an “Upstream Model” preventing customs process delays and ensuring timely delivery.</small></h3></p>
+            <p className=""><h3><small>1. Offer a more cost-efficient service by utilizing an “Upstream Model” preventing customs process delays and ensuring timely delivery.</small></h3></p>
             <br></br>
-            <p className="font-italic"><h3><small> 2. Provide faster cycle time to customers through optimization of Customs Clearance Time.</small></h3></p>
+            <p className=""><h3><small> 2. Provide faster cycle time to customers through optimization of Customs Clearance Time.</small></h3></p>
             <br></br>
-            <p className="font-italic"><h3><small> 3. Maximize efficiency and savings on logistics programs by providing exemplary service in Origin and Destination countries.</small></h3></p>
+            <p className=""><h3><small> 3. Maximize efficiency and savings on logistics programs by providing exemplary service in Origin and Destination countries.</small></h3></p>
           </div>
 
 
@@ -63,42 +63,47 @@ function MainServ() {
 
           {/* Col */}
           <div className="col-md-10 offset-md-1">
-            <p className="font-italic yellow-text"><h2>Origin Services</h2></p>
-            <p className="font-italic"><h3><small>Our “Upstream Approach” to the delivery process allows us to eliminate disturbances within the supply chain before they happen. This prevents any unforeseen dilemmas or expenses and ensures a clean supply chain from start to finish.</small></h3></p>
+            <p className=" yellow-text"><h2>Origin Services</h2></p>
+            <p className=""><h3><small>Our “Upstream Approach” to the delivery process allows us to eliminate disturbances within the supply chain before they happen. This prevents any unforeseen dilemmas or expenses and ensures a clean supply chain from start to finish.</small></h3></p>
             <br></br>
-            <p className="font-italic"><h3><small>As an expert in utilizing the best practices of freight forwarding, TMS can identify the right mode of transportation for your product. Our philosophy for transportation is to measure Over the Road (OTR) in hours —not days and to measure Ocean transit in days —not weeks, resulting in a faster lead-time and a greater customer experience.</small></h3></p>
+            <p className=""><h3><small>As an expert in utilizing the best practices of freight forwarding, TMS can identify the right mode of transportation for your product. Our philosophy for transportation is to measure Over the Road (OTR) in hours —not days and to measure Ocean transit in days —not weeks, resulting in a faster lead-time and a greater customer experience.</small></h3></p>
 
           </div>
         </div>
 
-        <div className="row">
-          {/* Transit */}
-          <div className="col-md-5 offset-md-1">
-            <div class="card bg-light mb-3">
-              <div class="card-header"><h4 class="card-title"><strong>Freight Transportation</strong></h4></div>
-              <div class="card-body">
-                <p class="card-text"><h5>Freight Forwarding</h5></p>
-                <p class="card-text"><h5>All Modes of Transportation</h5></p>
-                <p class="card-text"><h5>FTL/LTL Options</h5></p>
-                <p class="card-text"><h5>Oversize Loads</h5></p>
-                <p class="card-text"><h5>Cargo Tracking Plataform</h5></p>
-                {/* <p class="card-text"><h5>Electronic Freight Security Services</h5></p> */}
-                <p class="card-text"><h5>Complete Project Logistics Management</h5></p>
-                <p class="card-text"><h5>Heavy Haul Capabilities</h5></p>
-                {/* <p class="card-text"><h5>Licenses & Permits</h5></p> */}
-                {/* <p class="card-text"><h5>Multiple Modes of Transportation</h5></p> */}
-                <p class="card-text"><h5>Consolidation</h5></p>
-                <p class="card-text"><h5>Cross-Docking</h5></p>
-                <p class="card-text"><h5>Secured Port Facilities</h5></p>
-                {/* <p class="card-text"><h5>Commodity Issues</h5></p> */}
+        
+          <div className="row">
+          
+            {/* Transit */}
+            <div className="col-md-5 offset-md-1">
+           
+              <div class="mb-3 white-box rounded">
+                <div class="card-header"><h4 class="card-title"><strong>Freight Transportation</strong></h4></div>
+                <div class="card-body">
+                  <p class="card-text"><h5>Freight Forwarding</h5></p>
+                  <p class="card-text"><h5>All Modes of Transportation</h5></p>
+                  <p class="card-text"><h5>FTL/LTL Options</h5></p>
+                  <p class="card-text"><h5>Oversize Loads</h5></p>
+                  <p class="card-text"><h5>Cargo Tracking Plataform</h5></p>
+                  {/* <p class="card-text"><h5>Electronic Freight Security Services</h5></p> */}
+                  <p class="card-text"><h5>Complete Project Logistics Management</h5></p>
+                  <p class="card-text"><h5>Heavy Haul Capabilities</h5></p>
+                  {/* <p class="card-text"><h5>Licenses & Permits</h5></p> */}
+                  {/* <p class="card-text"><h5>Multiple Modes of Transportation</h5></p> */}
+                  <p class="card-text"><h5>Consolidation</h5></p>
+                  <p class="card-text"><h5>Cross-Docking</h5></p>
+                  <p class="card-text"><h5>Secured Port Facilities</h5></p>
+                  {/* <p class="card-text"><h5>Commodity Issues</h5></p> */}
+                </div>
               </div>
+      
             </div>
-          </div>
+          
 
 
           {/* Key Specialties */}
           <div className="col-md-5">
-            <div class="card bg-light mb-3">
+            <div class="mb-3 white-box rounded">
               <div class="card-header"><h4 class="card-title"><strong>Key Specialties</strong></h4></div>
               <div class="card-body">
                 <p class="card-text"><h5>Commercial Documentation Validation</h5></p>
@@ -142,7 +147,7 @@ function MainServ() {
 
           <div className="col-md-4 offset-md-1">
             {/* Key Specialties Card */}
-            <div class="card bg-light mb-3">
+            <div class="mb-3 white-box rounded">
               <div class="card-header"><h4 class="card-title"><strong>Key Specialties</strong></h4></div>
               <div class="card-body">
                 <p class="card-text"><h5>Customs Brokerage.</h5></p>
@@ -157,7 +162,7 @@ function MainServ() {
           </div>
 
           {/* Destination Services Text */}
-          <div className="col-md-6 font-italic">
+          <div className="col-md-6 ">
 
             <h3>
               <small>We manage every aspect of the customs clearance process, which can often be tedious and troublesome.  Lack of proper documentation can lead to stuck merchandise, which can be costly to resolve. Our import management solution reduces supply chain inventory and improves order to delivery time, resulting in subsequent reduction in brokerage and transportation costs.</small>

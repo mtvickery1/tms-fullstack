@@ -16,7 +16,7 @@ class Home extends Component {
     return (
 
       <React.Fragment>
-        <div className=''>
+        <div className='home-bg'>
 
         <LandingVideo />
         {/* <Intro /> */}

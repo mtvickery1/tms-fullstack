@@ -31,66 +31,66 @@ class Footer extends Component {
         <div id='footer' className="container-fluid">
 
           {/* <!-- Scroll Up Button --> */}
-          <div className='row darker'>
+          <div className='row darker p-2'>
             <div className='col-lg-12'>
-              <div id="circle-up-container" className="text-center pt-2 pb-2">
-                <FaChevronCircleUp size='2em' className="pointer" onClick={this.scrollToTop} />
+              <div id="circle-up-container" className="text-center py-1">
+                <FaChevronCircleUp size='2.6em' className="pointer" onClick={this.scrollToTop} />
                 {/* <i className="fas fa-chevron-circle-up fa-2x pt-2 pb-2" onClick={this.scrollToTop}></i> */}
               </div>
             </div>
           </div>
 
           {/* Row */}
-          <div className='row mt-3'>
+          <div className='row mt-3 p-3'>
 
             {/* ---------------------- Links Col ---------------------- */}
             <div id='links' className="col-lg-10 offset-lg-1  my-auto ">
 
               <div class="row">
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Home</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/profile"><i className="fa fa-angle-double-right blue-text" /><span className='space'>About TMS</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/services"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Our Services</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/warehouse"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Warehouse</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <a target='_blank' href="http://apps.tms-lp.com/ORTrack/Tracking"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Tracking</span></a>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/contactus"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Contact Us</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/icote"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Incoterms</span></Link>
                   </div>
                 </div>
 
-                <div class="col-6 col-md-4 col-lg-3" >
+                <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
                     <Link exact to="/docs"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Documents</span></Link>
                   </div>
@@ -117,7 +117,7 @@ class Footer extends Component {
             </div>
           </div>
 
-          <div className="row darker">
+          <div className="row darker pt-3 pb-1">
             <div className="col-12 mt-2 text-center">
               <p><a className='' href="javascript:void();">© Copyright 2013 tms-lp.com All rights reserved.</a></p>
             </div>

@@ -1,3 +1,60 @@
-/* Documents */
-/* blue #B8DAFF
-green #C3E6CB */
+/* Intcoterms */
+
+#incoterms {
+  font-size: 20px;
+}
+
+.react-pdf__Page__canvas {
+  display: inline !important;
+  position: relative;
+}
+
+.react-pdf__Document {
+  position: relative;
+}
+
+#brochure-page-number {
+  position: relative;
+  right: 74px
+}
+
+#brochure-page-next-prev {
+  position: relative;
+  left: 74px
+}
+
+/* BOL */
+#iframe-pdf-div {
+  max-width: 800px;
+}
+
+/* Brochure */
+@media (min-width: 720px) {
+  #brochure-page-number {
+    right: 222px
+  }
+  #brochure-page-next-prev {
+    left: 222px
+  }
+}
+
+@media (min-width: 992px) {
+  /* Brochure */
+  #brochure-page-number {
+    right: 303px
+  }
+  #brochure-page-next-prev {
+    left: 303px
+  }
+  /* BOL */
+  #pdf-div {
+    margin: 0 100px;
+  }
+}
+
+@media (min-width: 1250px) {
+  /* BOL */
+  #pdf-div {
+    margin: 0 250px;
+  }
+}

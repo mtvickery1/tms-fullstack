@@ -29,12 +29,14 @@
   /* max-height: 100vh; */
   z-index: -100;
   display: block;
+  background: #2F2F2F;
 }
 
 /* --------------- Not Fullscreen video --------------- */
 
 .bg-wrapper {
-  position: relative;
+  position: relative; /* not sure if relative is needed */
+  /* background: black; */
 }
 
 /* #fade {
@@ -47,4 +49,20 @@
 
 .landing-space{
   padding-top: 60px;
+}
+
+
+/* Progressive video loading */
+.video-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 400ms ease 0ms;
+}
+.tiny {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: visibility 0ms ease 400ms;
 }

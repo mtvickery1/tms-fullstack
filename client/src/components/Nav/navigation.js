@@ -62,19 +62,20 @@ class navigation extends Component {
         <Navbar id='navbar' fixed="top" collapseOnSelect expand="lg" bg="light" variant="light" className="mb-0 p-0">
           <Container id='navbar-container'>
             {/* Brand Logo */}
-            <Navbar.Brand as={Link} to="/" >
+            <Navbar.Brand><Nav.Link href='/' componentclass={Link} > <Link to="/">
               <img id='logo' src={tmslogo} width="80" height="50" alt="" className="d-inline-block align-top" />
               <div id='white-square'></div>
+            </Link></Nav.Link>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
             {/* Links */}
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ml-auto">
+              <Nav className="ml-auto pl-2 pl-xs-0">
 
                 {/* Home */}
-                <Nav.Link as={Link} to="/" >Home</Nav.Link>
+                <Nav.Link eventKey="1" as={Link} to="/" >Home</Nav.Link>
 
 
                 {/* Our Company */}
@@ -86,11 +87,8 @@ class navigation extends Component {
                   show={this.state.companyIsOpen}
                   noCaret
                 >
-                  <NavDropdown.Item as={Link} to="/profile" >About TMS</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/partnership" >Our Strategic Partnerships</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/gi" >Group Infrastructure</NavDropdown.Item>
-                  {/* <NavDropdown.Item as={Link} > <Link to="/exleader">Execute Leadership</Link></NavDropdown.Item> */}
-                  {/* <NavDropdown.Item as={Link} > <Link to="/globalser">Global Reach</Link></NavDropdown.Item> */}
+                  <NavDropdown.Item eventKey="2.1" as={Link} to="/profile" >About TMS</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="2.2" as={Link} to="/partnership" >Our Strategic Partnerships</NavDropdown.Item>
                 </NavDropdown>
 
 
@@ -104,7 +102,7 @@ class navigation extends Component {
                   show={this.state.servicesIsOpen}
                   noCaret
                 >
-                  <NavDropdown.Item as={Link} to="/services" >Our Services</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="3.1" as={Link} to="/services" >Our Services</NavDropdown.Item>
 
                   {/* <NavDropdown.Item as={Link} > <Link to="/destination">Destination Services</Link></NavDropdown.Item> */}
 
@@ -118,12 +116,12 @@ class navigation extends Component {
                   {/* <NavDropdown.Item as={Link} > <Link to="/warehose">Warehouse</Link></NavDropdown.Item> */}
 
 
-                  <NavDropdown.Item as={Link}to="/cfi" >Computer Deployment Services</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="3.2" as={Link} to="/cfi" >Computer Deployment Services</NavDropdown.Item>
                 </NavDropdown>
 
 
                 {/* Warehouse */}
-                <Nav.Link as={Link} to="/warehouse" >Warehouse</Nav.Link>
+                {/* <Nav.Link eventKey="4" as={Link} to="/warehouse" >Warehouse</Nav.Link> */}
 
                 {/* Tracking */}
                 <Nav.Link target='_blank' href="http://apps.tms-lp.com/ORTrack/Tracking"><span id='tracking'>Tracking</span></Nav.Link>
@@ -137,11 +135,11 @@ class navigation extends Component {
                   show={this.state.resourcesIsOpen}
                   noCaret
                 >
-                  <NavDropdown.Item as={Link} to="/icote" >Incoterms</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="5.1" as={Link} to="/icote" >Incoterms</NavDropdown.Item>
                   {/* <NavDropdown.Item as={Link} > <Link to="/termcond">Terms and Conditions</Link></NavDropdown.Item> */}
-                  <NavDropdown.Item as={Link} to="/docs" >Documents</NavDropdown.Item>
+                  <NavDropdown.Item eventKey="5.2" as={Link} to="/docs" >Documents</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link as={Link} to="/contactus" >Contact Us</Nav.Link>
+                <Nav.Link eventKey="6" as={Link} to="/contactus" >Contact Us</Nav.Link>
               </Nav>
 
             </Navbar.Collapse>

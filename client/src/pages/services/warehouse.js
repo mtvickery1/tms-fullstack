@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useEffect } from 'react'
 
 
-import '../../css/mainserv.css';
+
 // import Footer from '../../components/Footer/footer.js/index.js';
 import { Link, Route } from 'react-router-dom';
 // import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";

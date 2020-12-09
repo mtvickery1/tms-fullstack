@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 
 import imag1 from "../../images/trdm4.jpg";
-import '../../css/mainserv.css';
+
 // import Footer from '../../components/Footer/footer';
 import { Link } from 'react-router-dom';
 // import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
@@ -36,13 +36,6 @@ function MainServ() {
 
           {/* Col */}
           <div className="col-md-6">
-            <a href="#">
-              <img className="img-fluid rounded mb-3 mb-md-0" src={pic1} alt="" width="700" height="300" />
-            </a>
-          </div>
-
-          {/* Col */}
-          <div className="col-md-6">
             <p className="font-italic yellow-text"><h2>Computer Deployment Services</h2></p>
 
             {/* Row */}
@@ -50,7 +43,7 @@ function MainServ() {
 
               {/* Col */}
               <div className="col-md-6">
-                <div class="card bg-light mb-3">
+                <div class="mb-3 white-box rounded">
                   <div class="card-header">
                     <h4 class="card-title"><strong>Fullfilment </strong></h4>
                   </div>
@@ -65,7 +58,7 @@ function MainServ() {
 
               {/* Col */}
               <div className="col-md-6">
-                <div class="card bg-light mb-3">
+                <div class="mb-3 white-box rounded">
                   <div class="card-header"><h4 class="card-title"><strong>Rack Integration </strong></h4></div>
                   <div class="card-body">
                     <p class="card-text"><h5>Hardware installation.</h5></p>
@@ -86,7 +79,7 @@ function MainServ() {
 
               {/* Col */}
               <div className="col-md-6">
-                <div class="card bg-light mb-3">
+                <div class="mb-3 white-box rounded">
                   <div class="card-header"><h4 class="card-title"><strong>Integration </strong></h4></div>
                   <div class="card-body">
                     <p class="card-text"><h5>System integration.</h5></p>
@@ -103,7 +96,7 @@ function MainServ() {
 
               {/* Col */}
               <div className="col-md-6">
-                <div class="card bg-light mb-3">
+                <div class="mb-3 white-box rounded">
                   <div class="card-header"><h4 class="card-title"><strong>Rework & Repair </strong></h4></div>
                   <div class="card-body">
                     <p class="card-text"><h5>Test (power up/down).</h5></p>
@@ -119,6 +112,17 @@ function MainServ() {
 
             </div>
           </div>
+
+          {/* Col */}
+          <div className="col-md-6">
+            <a href="#">
+              <img className="img-fluid rounded mb-3 mb-md-0" src={pic1} alt="" width="700" height="300" />
+            </a>
+          </div>
+
+
+
+
         </div>
 
         <br></br>
