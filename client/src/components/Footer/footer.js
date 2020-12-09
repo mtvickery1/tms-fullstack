@@ -68,7 +68,7 @@ class Footer extends Component {
 
                 <div class="col-6 col-md-4 col-lg-3 p-1" >
                   <div className='link mx-auto'>
-                    <Link exact to="/warehouse"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Warehouse</span></Link>
+                    <Link exact to="/partnership"><i className="fa fa-angle-double-right blue-text" /><span className='space'>Partnerships</span></Link>
                   </div>
                 </div>
 
