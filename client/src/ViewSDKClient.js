@@ -10,133 +10,152 @@ written permission of Adobe.
 */
 import pdffile from '../src/pdf/BOL.pdf';
 
+require("dotenv").config();
+
+// Keys
+var keys = require('../src/keys');
+// const api = process.env.REACT_APP_EMBED_API
+let api;
+
+if (process.env.NODE_ENV === "production") {
+  console.log("production");
+  api = keys.embed.apiProd
+  console.log('api:', api)
+} else {
+  console.log("development");
+  api = keys.embed.apiDev
+  console.log('api:', api)
+
+}
 
 class ViewSDKClient {
-    constructor() {
-        this.readyPromise = new Promise((resolve) => {
-            if (window.AdobeDC) {
-                resolve();
-            } else {
-                /* Wait for Adobe Document Services PDF Embed API to be ready */
-                document.addEventListener("adobe_dc_view_sdk.ready", () => {
-                    resolve();
-                });
-            }
+  constructor() {
+    this.readyPromise = new Promise((resolve) => {
+      if (window.AdobeDC) {
+        resolve();
+      } else {
+        /* Wait for Adobe Document Services PDF Embed API to be ready */
+        document.addEventListener("adobe_dc_view_sdk.ready", () => {
+          resolve();
         });
-        this.adobeDCView = undefined;
+      }
+    });
+    this.adobeDCView = undefined;
+  }
+
+  ready() {
+    return this.readyPromise;
+  }
+
+  previewFile(divId, viewerConfig) {
+    const config = {
+      /* Pass your registered client id */
+
+      clientId: api // - test API
+      // clientId: "39ca8c7467f84512b248a1d0efd022df"
+    };
+    if (divId) { /* Optional only for Light Box embed mode */
+      /* Pass the div id in which PDF should be rendered */
+      config.divId = divId;
     }
+    /* Initialize the AdobeDC View object */
+    this.adobeDCView = new window.AdobeDC.View(config);
 
-    ready() {
-        return this.readyPromise;
-    }
+    /* Invoke the file preview API on Adobe DC View object */
+    const previewFilePromise = this.adobeDCView.previewFile({
+      /* Pass information on how to access the file */
+      content: {
+        /* Location of file where it is hosted */
+        location: {
+          url: pdffile,
+          /*
+          If the file URL requires some additional headers, then it can be passed as follows:-
+          headers: [
+              {
+                  key: "<HEADER_KEY>",
+                  value: "<HEADER_VALUE>",
+              }
+          ]
+          */
+        },
+      },
+      /* Pass meta data of file */
+      metaData: {
+        /* file name */
+        fileName: "Bill of Lading.pdf",
+        /* file ID */
+        id: "6d07d124-ac85-43b3-a867-36930f502ac6",
+      }
+    }, viewerConfig);
 
-    previewFile(divId, viewerConfig) {
-        const config = {
-            /* Pass your registered client id */
-            clientId: "8c0cd670273d451cbc9b351b11d22318",
-        };
-        if (divId) { /* Optional only for Light Box embed mode */
-            /* Pass the div id in which PDF should be rendered */
-            config.divId = divId;
-        }
-        /* Initialize the AdobeDC View object */
-        this.adobeDCView = new window.AdobeDC.View(config);
+    return previewFilePromise;
+  }
 
-        /* Invoke the file preview API on Adobe DC View object */
-        const previewFilePromise = this.adobeDCView.previewFile({
-            /* Pass information on how to access the file */
-            content: {
-                /* Location of file where it is hosted */
-                location: {
-                    url: pdffile,
-                    /*
-                    If the file URL requires some additional headers, then it can be passed as follows:-
-                    headers: [
-                        {
-                            key: "<HEADER_KEY>",
-                            value: "<HEADER_VALUE>",
-                        }
-                    ]
-                    */
-                },
+  previewFileUsingFilePromise(divId, filePromise, fileName) {
+    /* Initialize the AdobeDC View object */
+    this.adobeDCView = new window.AdobeDC.View({
+      /* Pass your registered client id */
+      clientId: "8c0cd670273d451cbc9b351b11d22318",
+      /* Pass the div id in which PDF should be rendered */
+      divId,
+    });
+
+    /* Invoke the file preview API on Adobe DC View object */
+    this.adobeDCView.previewFile({
+      /* Pass information on how to access the file */
+      content: {
+        /* pass file promise which resolve to arrayBuffer */
+        promise: filePromise,
+      },
+      /* Pass meta data of file */
+      metaData: {
+        /* file name */
+        fileName: fileName
+      }
+    }, {});
+  }
+
+  registerSaveApiHandler() {
+    /* Define Save API Handler */
+    const saveApiHandler = (metaData, content, options) => {
+      console.log(metaData, content, options);
+      return new Promise(resolve => {
+        /* Dummy implementation of Save API, replace with your business logic */
+        setTimeout(() => {
+          const response = {
+            code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+            data: {
+              metaData: Object.assign(metaData, { updatedAt: new Date().getTime() })
             },
-            /* Pass meta data of file */
-            metaData: {
-                /* file name */
-                fileName: "Bill of Lading.pdf",
-                /* file ID */
-                id: "6d07d124-ac85-43b3-a867-36930f502ac6",
-            }
-        }, viewerConfig);
+          };
+          resolve(response);
+        }, 2000);
+      });
+    };
 
-        return previewFilePromise;
-    }
+    this.adobeDCView.registerCallback(
+      window.AdobeDC.View.Enum.CallbackType.SAVE_API,
+      saveApiHandler,
+      {}
+    );
+  }
 
-    previewFileUsingFilePromise(divId, filePromise, fileName) {
-        /* Initialize the AdobeDC View object */
-        this.adobeDCView = new window.AdobeDC.View({
-            /* Pass your registered client id */
-            clientId: "8c0cd670273d451cbc9b351b11d22318",
-            /* Pass the div id in which PDF should be rendered */
-            divId,
-        });
-
-        /* Invoke the file preview API on Adobe DC View object */
-        this.adobeDCView.previewFile({
-            /* Pass information on how to access the file */
-            content: {
-                /* pass file promise which resolve to arrayBuffer */
-                promise: filePromise,
-            },
-            /* Pass meta data of file */
-            metaData: {
-                /* file name */
-                fileName: fileName
-            }
-        }, {});
-    }
-
-    registerSaveApiHandler() {
-        /* Define Save API Handler */
-        const saveApiHandler = (metaData, content, options) => {
-            console.log(metaData, content, options);
-            return new Promise(resolve => {
-                /* Dummy implementation of Save API, replace with your business logic */
-                setTimeout(() => {
-                    const response = {
-                        code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-                        data: {
-                            metaData: Object.assign(metaData, {updatedAt: new Date().getTime()})
-                        },
-                    };
-                    resolve(response);
-                }, 2000);
-            });
-        };
-
-        this.adobeDCView.registerCallback(
-            window.AdobeDC.View.Enum.CallbackType.SAVE_API,
-            saveApiHandler,
-            {}
-        );
-    }
-
-    registerEventsHandler() {
-        /* Register the callback to receive the events */
-        this.adobeDCView.registerCallback(
-            /* Type of call back */
-            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            /* call back function */
-            event => {
-                console.log(event);
-            },
-            /* options to control the callback execution */
-            {
-                /* Enable PDF analytics events on user interaction. */
-                enablePDFAnalytics: true,
-            }
-        );
-    }
+  registerEventsHandler() {
+    /* Register the callback to receive the events */
+    this.adobeDCView.registerCallback(
+      /* Type of call back */
+      window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+      /* call back function */
+      event => {
+        console.log(event);
+      },
+      /* options to control the callback execution */
+      {
+        /* Enable PDF analytics events on user interaction. */
+        enablePDFAnalytics: true,
+      }
+    );
+  }
 }
 
 export default ViewSDKClient;

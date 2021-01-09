@@ -36,7 +36,7 @@ function MainServ() {
 
           {/* Col */}
           <div className="col-md-6">
-            <p className="font-italic yellow-text"><h2>Computer Deployment Services</h2></p>
+            <p className="yellow-text"><h2>Computer Deployment Services</h2></p>
 
             {/* Row */}
             <div className="row">
